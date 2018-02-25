@@ -1,0 +1,62 @@
+
+
+    <div class="row text-center">
+  
+            <h2>Create a burger</h2>
+            <form class="create-update-form" action="/" method="POST">
+                <div class="form-group">
+                  <input type="text" id="bu" name="burger_name" placeholder="Burger Name">
+                </div>
+               
+          
+             <button id="addBurger" type="submit">Add Burger</button>
+               </form>
+            </div>
+  <br>
+    
+<div class="row text-center">
+  <div class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Ready to Eat</div>
+      <div id="burgers-added" class="panel-body">
+        <hr>
+
+              {{#each burger}}
+              {{#unless this.devoured}}
+          <div class="Burger was made on: {{this.date}}" id="date">
+                    {{this.burger_name}}
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="devoured" value="1">
+                      </div>
+                      <button class="dev" type="submit">Devour it</button>
+                       <hr>
+                    </form>
+                  {{/unless}}
+              {{/each}} 
+      </div>
+    </div>
+  </div>
+
+<div class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Devoured</div>
+        <div id="burgers-devoured" class="panel-body">
+        <hr>
+
+     
+          
+                {{#each burger}}
+              {{#if this.devoured}}
+                  <p class="Burger was made on: {{this.date}}">
+                    {{this.burger_name}}
+                  </p>
+              {{/if}}
+              {{/each}}
+            
+    </div>
+</div>
+
+
+
+
+ 
