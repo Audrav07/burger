@@ -35,5 +35,5 @@ app.use("/", routes);
 
 app.listen(port);
 // app.listen(PORT, function(){
-// 	 console.log("App now listening at localhost:" + PORT);
+	 console.log("App now listening at localhost:" + port);
 // });

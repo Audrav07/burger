@@ -1,14 +1,14 @@
 // Import the ORM to create functions that will interact with the database.
-const orm = require("../config/orm.js");
+const orm = require("../config/orm");
 
 //table to create/read/update
 const table = "burgers";
 
 const burger = {
-  all: (cb) =>{
+  all: (cb) => {
     orm.selectAll(table, res => { cb(res) })
   },
-  insert: (cols, vals, cb) =>{
+  insert: (cols, vals, cb) => {
     orm.insertOne(table, cols, vals, res => { cb(res) })
   },
   update: (objColVals, condition, cb) =>{
