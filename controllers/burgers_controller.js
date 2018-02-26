@@ -27,14 +27,18 @@ router.get("/", function(req, res){
 //   });
 // });
 
-router.post("/", (req, res) => {
+// router.post("/", function(req, res){
+//   burger.insert("burger_name", )
+// })
+
+router.post("/api/burger", (req, res) => {
   burger.insert("burger_name", req.body.burger_name, function()
     {
       res.redirect("/");
     });
 });
 
-router.put("/:id", (req, res) =>{
+router.put("/api/burger/:id", (req, res) =>{
 
 //id of button
 let condition = "id = " + req.params.id;
