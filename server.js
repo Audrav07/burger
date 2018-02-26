@@ -3,7 +3,7 @@ const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const path = require("path");
-const routes = require("./controllers/burgers_controller.js");
+
 const app = express();
 
 
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 // Serve static content for the app from the "public" directory in the application directory.
 
- app.use(express.static(path.join(__dirname, 'public')));
+ app.use(express.static(__dirname + '/public'));
 
 // app.use(express.static("/public"));
 // parse application/x-www-form-urlencoded
@@ -26,7 +26,7 @@ app.set("view engine", "handlebars");
 
 // app.use(express.static(process.cwd() + '/public'));
 // app.use(express.static(path.join(__dirname + 'assets')));
-
+const routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 
 app.listen(PORT, function(){

@@ -1,9 +1,9 @@
-DROP DATABASE IF EXISTS `burgers_db`;
+-- DROP DATABASE IF EXISTS `burgers_db`;
 
 CREATE DATABASE burgers_db;
 
 USE burgers_db;
-DROP TABLE IF EXISTS burgers;
+-- DROP TABLE IF EXISTS burgers;
 
 CREATE TABLE burgers (
 	id INTEGER(10) auto_increment NOT NULL PRIMARY KEY UNIQUE,
@@ -12,4 +12,4 @@ CREATE TABLE burgers (
     date TIMESTAMP
     );
     
-SELECT * FROM `burgers`;
+-- SELECT * FROM `burgers`;
