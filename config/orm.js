@@ -1,23 +1,14 @@
 
 // // Import MySQL connection.
-const connection = require("./connection.js");
-// Helper function for SQL syntax.
-function printQuestionMarks(num) {
-  var arr = [];
+const connection = require("../config/connection.js");
 
-  for (var i = 0; i < num; i++) {
-    arr.push("?");
-  }
-
-  return arr.toString();
-}
 
 function objToSql(ob) {
  var arr = [];
   // loop through the keys and push the key/value as a string int arr
   for (var key in ob) {
   
-     if (Object.hasOwnProperty.call(ob, key)) {
+     if (ob.hasOwnProperty.call(ob, key)) {
       arr.push(key + "=" + ob[key]);
     }
   }
@@ -25,7 +16,7 @@ function objToSql(ob) {
    }
 
    const orm = {
-    selectAll: (tableInput, cb) =>{
+    all: (tableInput, cb) =>{
       //put all rows in table
       let queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, (err, result) =>{
