@@ -29,7 +29,10 @@ app.set("view engine", "handlebars");
 // app.use(express.static(process.cwd() + '/public'));
 
 const routes = require("./controllers/burgers_controller.js");
-app.use( routes);
+app.use("/", routes);
+app.listen(app.get("PORT"), function() {
+	console.log("You are running on port", app.get("PORT"));
+});
 
 app.listen(PORT, function(){
 	 console.log("App now listening at localhost:" + PORT);
