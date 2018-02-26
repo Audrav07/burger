@@ -16,7 +16,7 @@ function objToSql(ob) {
    }
 
    const orm = {
-    all: (tableInput, cb) =>{
+    selectAll: (tableInput, cb) =>{
       //put all rows in table
       let queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, (err, result) =>{
@@ -24,7 +24,7 @@ function objToSql(ob) {
       
 
         cb(result);
-      });
+      })
     },
     insertOne: (table, cols, vals, cb) =>{
       //insert new burger

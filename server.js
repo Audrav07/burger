@@ -25,7 +25,7 @@ app.set("view engine", "handlebars");
 
 
 // app.use(express.static(process.cwd() + '/public'));
-// app.use(express.static(path.join(__dirname + 'assets')));
+
 const routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 
