@@ -7,7 +7,7 @@ const path = require("path");
 const app = express();
 
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 
 
@@ -33,7 +33,7 @@ app.set("view engine", "handlebars");
 const routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 
-app.listen(port);
+app.listen(PORT);
 // app.listen(PORT, function(){
-	 console.log("App now listening at localhost:" + port);
+	 console.log("App now listening at localhost:" + PORT);
 // });
