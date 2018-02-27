@@ -25,7 +25,7 @@
               {{#unless this.devoured}}
           <div class="Burger was made on: {{this.date}}" id="date">
                     {{this.burger_name}}
-                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <form action="/burger/{{this.id}}?_method=PUT" method="POST">
                       <input type="hidden" name="devoured" value="1">
                       </div>
                       <button class="dev" type="submit">Devour it</button>
