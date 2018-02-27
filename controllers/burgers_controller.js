@@ -31,7 +31,7 @@ router.get("/", (req, res) => {
 //   burger.insert("burger_name", )
 // })
 
-router.post("/api/", (req, res) => {
+router.post("/api", (req, res) => {
   burger.insert("burger_name", req.body.burger_name, function()
     {
       res.redirect("/");
