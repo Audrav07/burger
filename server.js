@@ -28,8 +28,6 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-// app.use(express.static(process.cwd() + '/public'));
-
 const routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 
